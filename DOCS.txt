@@ -1,0 +1,18 @@
+Project Blueprint: React Front-End + Python Flask/FastAPI Backend + Kaggle Dataset
+
+Stack:
+Backend - Python (Flask or FastAPI - both are great, FastAPI is more modern and async-friendly)
+Dataset: Student Habits vs Academic Performance on Kaggle
+Frontend: React (create-react-app or Vite)
+
+Workflow:
+1. Python backend loads and processes the Kaggle dataset (using pandas)
+2. Backend exposes REST API endpoints (using Flask/FastAPI)
+3. React frontend fetches data from those API endpoints
+4. Frontend displays data visually (tables, cards, charts using Chart.js, Recharts, etc.)
+
+
+To Run:
+1. Run the uvicorn backend with uvicorn main:app --reload
+2. Run the React frontend with npm start
+3. Check for code in backend terminal
