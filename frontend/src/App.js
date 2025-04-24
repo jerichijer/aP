@@ -1,6 +1,6 @@
 import './App.css';
-
 import React, { useEffect, useState } from 'react';
+import { Canvas } from "@react-three/fiber"; // 3D Rendering
 
 function App() {
   const [data, setData] = useState([]);
@@ -27,6 +27,9 @@ function App() {
           </div>
         ))}
       </div>
+        <div className='App'>
+          <Canvas></Canvas>
+        </div>
     </div>
   );
 }

@@ -16,3 +16,7 @@ To Run:
 1. Run the uvicorn backend with uvicorn main:app --reload
 2. Run the React frontend with npm start
 3. Check for code in backend terminal
+
+
+Notes:
+4/24 - installed react-three/fiber & drei. fiber is a React renderer for threejs. Drei is a collection of helpers and abstractions for fiber.
