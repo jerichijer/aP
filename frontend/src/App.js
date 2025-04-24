@@ -13,22 +13,19 @@ function App() {
 
 
   return (
-    <div className='min-h-screen bg-black p-6'>
-      <h1 className='text-4xl font-bold text-center mb-8'>Dataset Viewer</h1>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+    <div>
+      <h1>Dataset Viewer</h1>
+      <div>
         {data.map((student, index) => (
-          <div key={index} className='bg-white rounded-xl shadow-lg p-6 border border-gray-200'>
+          <div key={index}>
             {Object.entries(student).map(([key, value]) => (
-              <p key={key} className='mb-1 text-gray-700'>
-                <span className='font-semibold capitalize'>{key.replace(/_/g, " ")}:</span>{" "}
+              <p key={key} >
+                <span>{key.replace(/_/g, " ")}:</span>{" "}
                 {value}
               </p>
             ))}
           </div>
         ))}
-      </div>
-        <div className='App'>
-          <Canvas></Canvas>
         </div>
     </div>
   );

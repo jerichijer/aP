@@ -4,7 +4,7 @@ import pandas as pd
 
 app = FastAPI()
 
-# Allow React App to access API
+# Utilizing CORS Middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
@@ -17,7 +17,26 @@ df = pd.read_csv('kaggleSet.csv')
 
 @app.get("/api/data")
 def get_data():
-    data = df.head(1).to_dict(orient="records")
+
+    #--------------------------------------
+    # Tesing
+    print(df.loc[0, 'age'])
+
+    print((len)(df))
+
+    # Understanding conditionals within DataFrames
+    if df.loc[1, 'exam_score'] > 70:
+
+        if df.loc[1, 'exam_score'] == 100:
+            print('aced')
+        else:
+            print('passed')
+    else:
+        print('did not pass')
+    #---------------------------------------
+
+    # Return to normal programming
+    data = df.head(2).to_dict(orient="records")
     return data
 
 if __name__ == "__main__":
