@@ -35,7 +35,7 @@ A full-stack web application built with **React** (frontend) and **Python FastAP
 
 ## Getting Started
 
-### Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/jerichijer/aP.git
