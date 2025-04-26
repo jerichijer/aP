@@ -1,6 +1,9 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import { Canvas } from "@react-three/fiber"; // 3D Rendering
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import Home from './pages/Home';
+import DatasetViewer from './pages/DatasetViewer';
+import About from './pages/About';
 
 function App() {
   const [data, setData] = useState([]);
@@ -13,21 +16,19 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Dataset Viewer</h1>
-      <div>
-        {data.map((student, index) => (
-          <div key={index}>
-            {Object.entries(student).map(([key, value]) => (
-              <p key={key} >
-                <span>{key.replace(/_/g, " ")}:</span>{" "}
-                {value}
-              </p>
-            ))}
-          </div>
-        ))}
-        </div>
-    </div>
+    <Router>
+      <div className='App'>
+        <nav>
+          <Link to="/">Home</Link> | <Link to="/data">View Dataset</Link> | <Link to="/about">About</Link>
+        </nav>
+
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/data' element={<DatasetViewer />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

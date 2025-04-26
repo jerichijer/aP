@@ -1,13 +1,19 @@
-.App {
-    width: 100vh;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+nav {
+    background-color: #333;
+    padding: 12px;
 }
 
-* {
-    background: tan;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.data {
     text-align: center;
-    color: black;
 }

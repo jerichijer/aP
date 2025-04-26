@@ -1,6 +1,8 @@
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
+import numpy as np
 
 app = FastAPI()
 
@@ -17,27 +19,11 @@ df = pd.read_csv('kaggleSet.csv')
 
 @app.get("/api/data")
 def get_data():
-
-    #--------------------------------------
-    # Tesing
-    print(df.loc[0, 'age'])
-
-    print((len)(df))
-
-    # Understanding conditionals within DataFrames
-    if df.loc[1, 'exam_score'] > 70:
-
-        if df.loc[1, 'exam_score'] == 100:
-            print('aced')
-        else:
-            print('passed')
-    else:
-        print('did not pass')
-    #---------------------------------------
-
-    # Return to normal programming
-    data = df.head(2).to_dict(orient="records")
-    return data
+    df = pd.read_csv("kaggleSet.csv")
+    df.replace([np.inf, -np.inf], np.nan, inplace=True)
+    df.fillna(0, inplace=True)
+    data = df.to_dict(orient="records")
+    return JSONResponse(content=data)
 
 if __name__ == "__main__":
     import uvicorn
