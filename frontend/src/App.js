@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Home from './pages/Home';
 import DatasetViewer from './pages/DatasetViewer';
+import Chart from './pages/Chart';
 import About from './pages/About';
 
 function App() {
@@ -19,12 +20,13 @@ function App() {
     <Router>
       <div className='App'>
         <nav>
-          <Link to="/">Home</Link> | <Link to="/data">View Dataset</Link> | <Link to="/about">About</Link>
+          <Link to="/">Home</Link> | <Link to="/data">Data Cards</Link> | <Link to="/charts">Charts</Link> | <Link to="/about">About</Link>
         </nav>
 
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/data' element={<DatasetViewer />} />
+          <Route path='/charts' element={<Chart />} />
           <Route path='/about' element={<About />} />
         </Routes>
       </div>
