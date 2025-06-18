@@ -5,7 +5,7 @@ A full-stack web application built with **React** (frontend) and **Python FastAP
 
 ## Demo
 
-![App Screenshot](./assets/screenshot.png)
+![App Screenshot](./assets/datasetWebView.PNG)
 
 
 ---
